@@ -85,90 +85,6 @@ namespace AzerothWarsMapCompiler.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\SourceMaps\\awr_source_roc.w3x")]
-        public string RoCMapPath {
-            get {
-                return ((string)(this["RoCMapPath"]));
-            }
-            set {
-                this["RoCMapPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\SourceMaps\\awr_source_tft.w3x")]
-        public string TFTMapPath {
-            get {
-                return ((string)(this["TFTMapPath"]));
-            }
-            set {
-                this["TFTMapPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\SourceMaps\\awr_source_dow.w3x")]
-        public string DAWMapPath {
-            get {
-                return ((string)(this["DAWMapPath"]));
-            }
-            set {
-                this["DAWMapPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\jass\\RoC")]
-        public string RoCCodePath {
-            get {
-                return ((string)(this["RoCCodePath"]));
-            }
-            set {
-                this["RoCCodePath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\jass\\TFT")]
-        public string TFTCodePath {
-            get {
-                return ((string)(this["TFTCodePath"]));
-            }
-            set {
-                this["TFTCodePath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\jass\\DoW")]
-        public string DAWCodePath {
-            get {
-                return ((string)(this["DAWCodePath"]));
-            }
-            set {
-                this["DAWCodePath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\jass\\Main")]
-        public string MainCodePath {
-            get {
-                return ((string)(this["MainCodePath"]));
-            }
-            set {
-                this["MainCodePath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("..\\compiledMaps\\")]
         public string CompiledMapsPath {
             get {
@@ -217,14 +133,13 @@ namespace AzerothWarsMapCompiler.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("E:\\Users\\Zak\\Documents\\YakaryBovineMaps\\AzerothWarsLR\\sourceMaps\\awr_source_blank" +
-            ".w3x")]
-        public string BlankMapPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("mapCompilationPackages.json")]
+        public string MapCompilationPackagesPath {
             get {
-                return ((string)(this["BlankMapPath"]));
+                return ((string)(this["MapCompilationPackagesPath"]));
             }
             set {
-                this["BlankMapPath"] = value;
+                this["MapCompilationPackagesPath"] = value;
             }
         }
     }

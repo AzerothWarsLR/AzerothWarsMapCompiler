@@ -27,27 +27,27 @@ namespace AzerothWarsMapCompiler
       } 
     }
 
-    private JassHelper JassHelperWrapper { get; }
+    private MapCompiler _mapCompiler;
 
-    public MainForm(MapCompilationPackage[] mapCompilationPackages, JassHelper jassHelperWrapper)
+    public MainForm(MapCompilationPackage[] mapCompilationPackages, MapCompiler mapCompiler)
     {
-      JassHelperWrapper = jassHelperWrapper;
+      _mapCompiler = mapCompiler;
       InitializeComponent();
-      ChooseCompilationComboBox.DisplayMember = "Name";
+      ChooseCompilationComboBox.DisplayMember = "PackageName";
       ChooseCompilationComboBox.Items.AddRange(mapCompilationPackages);
     }
 
     private void TestMapButton_Click(object sender, EventArgs e)
     {
       ButtonsEnabled = false;
-      SelectedPackage.Compile(JassHelperWrapper, @"E:\Users\Zak\Documents\YakaryBovineMaps\AzerothWarsLR\buildTools\temp\" + "TestMapTest.w3x", true);
+      _mapCompiler.CompileMap(SelectedPackage, true, false);
       ButtonsEnabled = true;
     }
 
     private void PublishMapButton_Click(object sender, EventArgs e)
     {
       ButtonsEnabled = false;
-      SelectedPackage.Compile(JassHelperWrapper, @"E:\Users\Zak\Documents\YakaryBovineMaps\AzerothWarsLR\buildTools\temp\" + "PublishMapTest.w3x", true);
+      _mapCompiler.CompileMap(SelectedPackage, false, true);
       ButtonsEnabled = true;
     }
 

@@ -74,14 +74,11 @@ namespace AzerothWarsMapCompiler
         {
           //If there isn't, create a new file
           var newDirectoryPath = directoryPaths[0] + lniObject.SuggestedDirectoryPath;
-          string newFilePath;
-          if (File.Exists(lniObject.SuggestedFileName))
+          string newFilePath = newDirectoryPath + lniObject.SuggestedFileName + ".ini"; ;
+          if (File.Exists(newFilePath))
           {
             newFilePath = newDirectoryPath + lniObject.Id + ".ini";
-          } else
-          {
-            newFilePath = newDirectoryPath + lniObject.SuggestedFileName + ".ini";
-          } 
+          }
           Directory.CreateDirectory(newDirectoryPath);
           File.Create(newFilePath).Close();
           File.WriteAllText(newFilePath, lniObject.FileContents);

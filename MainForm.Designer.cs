@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.TestMapButton = new System.Windows.Forms.Button();
       this.PublishMapButton = new System.Windows.Forms.Button();
       this.ImportObjectsButton = new System.Windows.Forms.Button();
@@ -122,10 +123,9 @@
       this.Controls.Add(this.PublishMapButton);
       this.Controls.Add(this.TestMapButton);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.Name = "MainForm";
-      this.ShowIcon = false;
       this.Text = "Azeroth Wars Build Tools";
       this.Load += new System.EventHandler(this.MainForm_Load);
       this.ChooseCompilationPackagePanel.ResumeLayout(false);

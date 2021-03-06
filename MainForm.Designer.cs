@@ -69,7 +69,7 @@
       this.ImportObjectsButton.TabIndex = 11;
       this.ImportObjectsButton.Text = "Import objects";
       this.ImportObjectsButton.UseVisualStyleBackColor = true;
-      this.ImportObjectsButton.Click += new System.EventHandler(this.ExportObjectsButton_Click);
+      this.ImportObjectsButton.Click += new System.EventHandler(this.ImportObjectsButton_Click);
       // 
       // ExportObjectsButton
       // 
@@ -80,7 +80,7 @@
       this.ExportObjectsButton.TabIndex = 11;
       this.ExportObjectsButton.Text = "Export objects";
       this.ExportObjectsButton.UseVisualStyleBackColor = true;
-      this.ExportObjectsButton.Click += new System.EventHandler(this.ImportObjectsButton_Click);
+      this.ExportObjectsButton.Click += new System.EventHandler(this.ExportObjectsButton_Click);
       // 
       // ChooseCompilationPackagePanel
       // 

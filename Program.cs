@@ -22,6 +22,7 @@ namespace AzerothWarsMapCompiler
 
       string tempDirectoryPath = Path.GetFullPath(Properties.Settings.Default.TemporaryFilePath);
       string compiledMapsDirectoryPath = Path.GetFullPath(Properties.Settings.Default.CompiledMapsPath);
+      string sourceMapBackupsPath = Path.GetFullPath(Properties.Settings.Default.SourceMapBackupDirectory);
 
       var newJassHelper = new JassHelper(
         Path.GetFullPath(Properties.Settings.Default.JASSHelperPath),
@@ -29,7 +30,7 @@ namespace AzerothWarsMapCompiler
         Path.GetFullPath(Properties.Settings.Default.blizzardjPath),
         Path.GetFullPath(Properties.Settings.Default.TemporaryFilePath));
 
-      var newMapCompiler = new MapCompiler(tempDirectoryPath, compiledMapsDirectoryPath, newJassHelper);
+      var newMapCompiler = new MapCompiler(tempDirectoryPath, compiledMapsDirectoryPath, sourceMapBackupsPath, newJassHelper);
       var mapCompilationPackages = JsonConvert.DeserializeObject<List<MapCompilationPackage>>(
         File.ReadAllText(Properties.Settings.Default.MapCompilationPackagesPath)).ToArray();
       

@@ -142,5 +142,17 @@ namespace AzerothWarsMapCompiler.Properties {
                 this["MapCompilationPackagesPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\backups\\sourceMaps\\")]
+        public string SourceMapBackupDirectory {
+            get {
+                return ((string)(this["SourceMapBackupDirectory"]));
+            }
+            set {
+                this["SourceMapBackupDirectory"] = value;
+            }
+        }
     }
 }

@@ -32,5 +32,8 @@
     <Setting Name="MapCompilationPackagesPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">mapCompilationPackages.json</Value>
     </Setting>
+    <Setting Name="SourceMapBackupDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">..\backups\sourceMaps\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

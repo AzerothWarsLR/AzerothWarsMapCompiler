@@ -27,7 +27,7 @@ namespace AzerothWarsMapCompiler
       } 
     }
 
-    private MapCompiler _mapCompiler;
+    private readonly MapCompiler _mapCompiler;
 
     public MainForm(MapCompilationPackage[] mapCompilationPackages, MapCompiler mapCompiler)
     {
@@ -53,12 +53,16 @@ namespace AzerothWarsMapCompiler
 
     private void ExportObjectsButton_Click(object sender, EventArgs e)
     {
-      
+      ButtonsEnabled = false;
+      _mapCompiler.ExportObjects(SelectedPackage);
+      ButtonsEnabled = true;
     }
 
     private void ImportObjectsButton_Click(object sender, EventArgs e)
     {
-
+      ButtonsEnabled = false;
+      _mapCompiler.ImportObjects(SelectedPackage);
+      ButtonsEnabled = true;
     }
 
     private void MainForm_Load(object sender, EventArgs e)

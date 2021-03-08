@@ -84,15 +84,15 @@ namespace AzerothWarsMapCompiler
       if (publish)
       {
         //Convert the map to lni, then set map details appropriately
-        var mapAsLni = W3x2lni.ConvertToLni(mapCompilationPackage.SourceMapPath, _tempDirectoryPath + "tempini.w3x");
-        var mapDetailsObjects = W3x2LniObject.CreateObjectsFromFile(mapAsLni + @"\table\w3i.ini");
-        var mapDescription = mapDetailsObjects["map"];
-        mapDescription.SetFieldValue("map_name", mapCompilationPackage.PackageName + " " + mapCompilationPackage.VersionNumber);
-        var loadingScreen = mapDetailsObjects["loading_screen"];
-        mapDescription.RegenerateFileContents();
-        loadingScreen.SetFieldValue("title", mapCompilationPackage.PackageName + " " + mapCompilationPackage.VersionNumber);
-        loadingScreen.RegenerateFileContents();
-        W3x2LniObject.SaveObjectsToFile(mapDetailsObjects, mapAsLni + @"\table\w3i.ini");
+        var mapAsLni = W3x2lni.ConvertToLni(tempMapPath, _tempDirectoryPath + "tempini.w3x");
+        //var mapDetailsObjects = W3x2LniObject.CreateObjectsFromFile(mapAsLni + @"\table\w3i.ini");
+        //var mapDescription = mapDetailsObjects["map"];
+        //mapDescription.SetFieldValue("map_name", mapCompilationPackage.PackageName + " " + mapCompilationPackage.VersionNumber, true);
+        //var loadingScreen = mapDetailsObjects["loading_screen"];
+        //mapDescription.RegenerateFileContents();
+        //loadingScreen.SetFieldValue("title", mapCompilationPackage.PackageName + " " + mapCompilationPackage.VersionNumber, true);
+        //loadingScreen.RegenerateFileContents();
+        //W3x2LniObject.SaveObjectsToFile(mapDetailsObjects, mapAsLni + @"\table\w3i.ini");
         //Convert the map to slk for publishing
         var newFilePath = _compiledMapsDirectoryPath + mapCompilationPackage.FileName + mapCompilationPackage.VersionNumber + ".w3x";
         W3x2lni.ConvertToSLK(mapAsLni, newFilePath);

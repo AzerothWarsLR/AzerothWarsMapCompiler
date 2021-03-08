@@ -224,8 +224,12 @@ namespace AzerothWarsMapCompiler
       FileContents = stringBuilder.ToString();
     }
 
-    public void SetFieldValue(string field, string value)
+    public void SetFieldValue(string field, string value, bool wrapQuotes)
     {
+      if (wrapQuotes)
+      {
+        value = '\u0022' + value + '\u0022';
+      }
       _fields[field] = value;
     }
 

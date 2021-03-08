@@ -31,6 +31,7 @@ namespace AzerothWarsMapCompiler
     /// <returns></returns>
     public string AddJASSDirectoriesToMap(string map, string[] directories)
     {
+      Directory.CreateDirectory(_tempFileDirectoryPath);
       using (StreamWriter writer = new StreamWriter(_tempFileDirectoryPath + "merged.j"))
       {
         using (StreamReader reader = File.OpenText(MPQMasterWrapper.Extract(map, "war3map.j", _tempFileDirectoryPath)))

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security;
 using System.Text;
 using System.Windows.Forms;
 
@@ -73,6 +74,31 @@ namespace AzerothWarsMapCompiler
     private void ChooseCompilationComboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
       ButtonsEnabled = ChooseCompilationComboBox.SelectedItem != null;
+    }
+
+    private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    private void FindWarcraftDirectoryMenuItem_Click(object sender, EventArgs e)
+    {
+      var openFileDialog = new OpenFileDialog
+      {
+        Filter = "executables (*.exe)|*.exe"
+      };
+      if (openFileDialog.ShowDialog() == DialogResult.OK)
+      {
+        try
+        {
+          Properties.Settings.Default.Warcraft3FilePath = openFileDialog.FileName;
+        }
+        catch (SecurityException ex)
+        {
+          MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
+          $"Details:\n\n{ex.StackTrace}");
+        }
+      }
     }
   }
 }

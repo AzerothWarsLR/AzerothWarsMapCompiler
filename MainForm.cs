@@ -25,6 +25,7 @@ namespace AzerothWarsMapCompiler
         ImportObjectsButton.Enabled = value;
         TestMapButton.Enabled = value;
         PublishMapButton.Enabled = value;
+        PublishTestButton.Enabled = value;
       } 
     }
 
@@ -63,6 +64,13 @@ namespace AzerothWarsMapCompiler
     {
       ButtonsEnabled = false;
       _mapCompiler.ImportObjects(SelectedPackage);
+      ButtonsEnabled = true;
+    }
+
+    private void PublishTestMapButton_Click(object sender, EventArgs e)
+    {
+      ButtonsEnabled = false;
+      _mapCompiler.CompileMap(SelectedPackage, true, true);
       ButtonsEnabled = true;
     }
 

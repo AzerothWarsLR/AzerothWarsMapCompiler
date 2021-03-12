@@ -42,6 +42,7 @@
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.PublishTestButton = new System.Windows.Forms.Button();
       this.ChooseCompilationPackagePanel.SuspendLayout();
       this.menuStrip2.SuspendLayout();
       this.SuspendLayout();
@@ -51,7 +52,7 @@
       this.TestMapButton.Enabled = false;
       this.TestMapButton.Location = new System.Drawing.Point(12, 88);
       this.TestMapButton.Name = "TestMapButton";
-      this.TestMapButton.Size = new System.Drawing.Size(96, 23);
+      this.TestMapButton.Size = new System.Drawing.Size(110, 34);
       this.TestMapButton.TabIndex = 9;
       this.TestMapButton.Text = "Test map";
       this.TestMapButton.UseVisualStyleBackColor = true;
@@ -60,9 +61,9 @@
       // PublishMapButton
       // 
       this.PublishMapButton.Enabled = false;
-      this.PublishMapButton.Location = new System.Drawing.Point(114, 88);
+      this.PublishMapButton.Location = new System.Drawing.Point(128, 88);
       this.PublishMapButton.Name = "PublishMapButton";
-      this.PublishMapButton.Size = new System.Drawing.Size(96, 23);
+      this.PublishMapButton.Size = new System.Drawing.Size(110, 34);
       this.PublishMapButton.TabIndex = 10;
       this.PublishMapButton.Text = "Publish map";
       this.PublishMapButton.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
       // ImportObjectsButton
       // 
       this.ImportObjectsButton.Enabled = false;
-      this.ImportObjectsButton.Location = new System.Drawing.Point(12, 117);
+      this.ImportObjectsButton.Location = new System.Drawing.Point(12, 168);
       this.ImportObjectsButton.Name = "ImportObjectsButton";
-      this.ImportObjectsButton.Size = new System.Drawing.Size(96, 23);
+      this.ImportObjectsButton.Size = new System.Drawing.Size(110, 34);
       this.ImportObjectsButton.TabIndex = 11;
       this.ImportObjectsButton.Text = "Import objects";
       this.ImportObjectsButton.UseVisualStyleBackColor = true;
@@ -82,9 +83,9 @@
       // ExportObjectsButton
       // 
       this.ExportObjectsButton.Enabled = false;
-      this.ExportObjectsButton.Location = new System.Drawing.Point(114, 117);
+      this.ExportObjectsButton.Location = new System.Drawing.Point(128, 168);
       this.ExportObjectsButton.Name = "ExportObjectsButton";
-      this.ExportObjectsButton.Size = new System.Drawing.Size(96, 23);
+      this.ExportObjectsButton.Size = new System.Drawing.Size(110, 34);
       this.ExportObjectsButton.TabIndex = 11;
       this.ExportObjectsButton.Text = "Export objects";
       this.ExportObjectsButton.UseVisualStyleBackColor = true;
@@ -96,7 +97,7 @@
       this.ChooseCompilationPackagePanel.Controls.Add(this.label1);
       this.ChooseCompilationPackagePanel.Location = new System.Drawing.Point(12, 30);
       this.ChooseCompilationPackagePanel.Name = "ChooseCompilationPackagePanel";
-      this.ChooseCompilationPackagePanel.Size = new System.Drawing.Size(198, 52);
+      this.ChooseCompilationPackagePanel.Size = new System.Drawing.Size(226, 52);
       this.ChooseCompilationPackagePanel.TabIndex = 13;
       // 
       // ChooseCompilationComboBox
@@ -105,7 +106,7 @@
       this.ChooseCompilationComboBox.FormattingEnabled = true;
       this.ChooseCompilationComboBox.Location = new System.Drawing.Point(0, 15);
       this.ChooseCompilationComboBox.Name = "ChooseCompilationComboBox";
-      this.ChooseCompilationComboBox.Size = new System.Drawing.Size(198, 23);
+      this.ChooseCompilationComboBox.Size = new System.Drawing.Size(226, 23);
       this.ChooseCompilationComboBox.TabIndex = 8;
       this.ChooseCompilationComboBox.SelectedIndexChanged += new System.EventHandler(this.ChooseCompilationComboBox_SelectedIndexChanged);
       // 
@@ -114,7 +115,7 @@
       this.label1.Dock = System.Windows.Forms.DockStyle.Top;
       this.label1.Location = new System.Drawing.Point(0, 0);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(198, 15);
+      this.label1.Size = new System.Drawing.Size(226, 15);
       this.label1.TabIndex = 12;
       this.label1.Text = "Choose compilation package";
       this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -126,7 +127,7 @@
             this.helpToolStripMenuItem});
       this.menuStrip2.Location = new System.Drawing.Point(0, 0);
       this.menuStrip2.Name = "menuStrip2";
-      this.menuStrip2.Size = new System.Drawing.Size(223, 24);
+      this.menuStrip2.Size = new System.Drawing.Size(251, 24);
       this.menuStrip2.TabIndex = 14;
       this.menuStrip2.Text = "menuStrip2";
       // 
@@ -167,11 +168,24 @@
       this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
       this.aboutToolStripMenuItem.Text = "&About...";
       // 
+      // PublishTestButton
+      // 
+      this.PublishTestButton.Enabled = false;
+      this.PublishTestButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.PublishTestButton.Location = new System.Drawing.Point(128, 128);
+      this.PublishTestButton.Name = "PublishTestButton";
+      this.PublishTestButton.Size = new System.Drawing.Size(110, 34);
+      this.PublishTestButton.TabIndex = 9;
+      this.PublishTestButton.Text = "Publish and Test Map";
+      this.PublishTestButton.UseVisualStyleBackColor = true;
+      this.PublishTestButton.Click += new System.EventHandler(this.PublishTestMapButton_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(223, 164);
+      this.ClientSize = new System.Drawing.Size(251, 215);
+      this.Controls.Add(this.PublishTestButton);
       this.Controls.Add(this.ChooseCompilationPackagePanel);
       this.Controls.Add(this.ExportObjectsButton);
       this.Controls.Add(this.ImportObjectsButton);
@@ -208,5 +222,6 @@
     private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem FindWarcraftDirectoryMenuItem;
+    private System.Windows.Forms.Button PublishTestButton;
   }
 }

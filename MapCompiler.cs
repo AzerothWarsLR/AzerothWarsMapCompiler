@@ -72,11 +72,10 @@ namespace AzerothWarsMapCompiler
 
     public void CompileMap(MapCompilationPackage mapCompilationPackage, bool launch = false, bool publish = false)
     {
-      var joinedJASS = _jassHelper.AddJASSDirectoriesToMap(mapCompilationPackage.SourceMapPath, mapCompilationPackage.SourceCodeDirectoryPaths);
-      var compiledJASS = _jassHelper.CompileToJASS(joinedJASS, _tempDirectoryPath + "compiled.j");
-
       var tempMapPath = _tempDirectoryPath + "tempMap.w3x";
       File.Copy(mapCompilationPackage.SourceMapPath, tempMapPath, true);
+      var joinedJASS = _jassHelper.AddJASSDirectoriesToMap(tempMapPath, mapCompilationPackage.SourceCodeDirectoryPaths);
+      var compiledJASS = _jassHelper.CompileToJASS(joinedJASS, _tempDirectoryPath + "compiled.j");
       MPQMasterWrapper.Add(tempMapPath, compiledJASS, "war3map.j");
 
       var launchPath = tempMapPath;

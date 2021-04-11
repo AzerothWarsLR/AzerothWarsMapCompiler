@@ -22,7 +22,6 @@ namespace AzerothWarsMapCompiler
     private bool ButtonsEnabled {
       set {
         ExportObjectsButton.Enabled = value;
-        ImportObjectsButton.Enabled = value;
         TestMapButton.Enabled = value;
         PublishMapButton.Enabled = value;
         PublishTestButton.Enabled = value;

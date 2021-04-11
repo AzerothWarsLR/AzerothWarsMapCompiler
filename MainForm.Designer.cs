@@ -31,7 +31,6 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.TestMapButton = new System.Windows.Forms.Button();
       this.PublishMapButton = new System.Windows.Forms.Button();
-      this.ImportObjectsButton = new System.Windows.Forms.Button();
       this.ExportObjectsButton = new System.Windows.Forms.Button();
       this.ChooseCompilationPackagePanel = new System.Windows.Forms.Panel();
       this.ChooseCompilationComboBox = new System.Windows.Forms.ComboBox();
@@ -61,7 +60,7 @@
       // PublishMapButton
       // 
       this.PublishMapButton.Enabled = false;
-      this.PublishMapButton.Location = new System.Drawing.Point(128, 88);
+      this.PublishMapButton.Location = new System.Drawing.Point(12, 128);
       this.PublishMapButton.Name = "PublishMapButton";
       this.PublishMapButton.Size = new System.Drawing.Size(110, 34);
       this.PublishMapButton.TabIndex = 10;
@@ -69,21 +68,10 @@
       this.PublishMapButton.UseVisualStyleBackColor = true;
       this.PublishMapButton.Click += new System.EventHandler(this.PublishMapButton_Click);
       // 
-      // ImportObjectsButton
-      // 
-      this.ImportObjectsButton.Enabled = false;
-      this.ImportObjectsButton.Location = new System.Drawing.Point(12, 168);
-      this.ImportObjectsButton.Name = "ImportObjectsButton";
-      this.ImportObjectsButton.Size = new System.Drawing.Size(110, 34);
-      this.ImportObjectsButton.TabIndex = 11;
-      this.ImportObjectsButton.Text = "Import objects";
-      this.ImportObjectsButton.UseVisualStyleBackColor = true;
-      this.ImportObjectsButton.Click += new System.EventHandler(this.ImportObjectsButton_Click);
-      // 
       // ExportObjectsButton
       // 
       this.ExportObjectsButton.Enabled = false;
-      this.ExportObjectsButton.Location = new System.Drawing.Point(128, 168);
+      this.ExportObjectsButton.Location = new System.Drawing.Point(128, 128);
       this.ExportObjectsButton.Name = "ExportObjectsButton";
       this.ExportObjectsButton.Size = new System.Drawing.Size(110, 34);
       this.ExportObjectsButton.TabIndex = 11;
@@ -172,7 +160,7 @@
       // 
       this.PublishTestButton.Enabled = false;
       this.PublishTestButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.PublishTestButton.Location = new System.Drawing.Point(128, 128);
+      this.PublishTestButton.Location = new System.Drawing.Point(128, 88);
       this.PublishTestButton.Name = "PublishTestButton";
       this.PublishTestButton.Size = new System.Drawing.Size(110, 34);
       this.PublishTestButton.TabIndex = 9;
@@ -184,11 +172,10 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(251, 215);
+      this.ClientSize = new System.Drawing.Size(251, 172);
       this.Controls.Add(this.PublishTestButton);
       this.Controls.Add(this.ChooseCompilationPackagePanel);
       this.Controls.Add(this.ExportObjectsButton);
-      this.Controls.Add(this.ImportObjectsButton);
       this.Controls.Add(this.PublishMapButton);
       this.Controls.Add(this.TestMapButton);
       this.Controls.Add(this.menuStrip2);
@@ -211,7 +198,6 @@
     private System.Windows.Forms.Button TestMapButton;
     private System.Windows.Forms.Button PublishMapButton;
     private System.Windows.Forms.Button ExportObjectsButtons;
-    private System.Windows.Forms.Button ImportObjectsButton;
     private System.Windows.Forms.Panel ChooseCompilationPackagePanel;
     private System.Windows.Forms.ComboBox ChooseCompilationComboBox;
     private System.Windows.Forms.Label label1;

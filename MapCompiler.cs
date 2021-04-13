@@ -82,6 +82,7 @@ namespace AzerothWarsMapCompiler
 
       if (publish)
       {
+        Directory.CreateDirectory(_compiledMapsDirectoryPath);
         //Convert the map to lni, then set map details appropriately
         var mapAsLni = W3x2lni.ConvertToLni(tempMapPath, _tempDirectoryPath + "tempini.w3x");
         //var mapDetailsObjects = W3x2LniObject.CreateObjectsFromFile(mapAsLni + @"\table\w3i.ini");

@@ -84,7 +84,7 @@ namespace AzerothWarsMapCompiler
       {
         Directory.CreateDirectory(_compiledMapsDirectoryPath);
         var newFilePath = _compiledMapsDirectoryPath + mapCompilationPackage.FileName + mapCompilationPackage.VersionNumber + ".w3x";
-        File.Copy(tempMapPath, newFilePath, true);
+        W3x2lni.ConvertToObj(tempMapPath, newFilePath); //For some reason, failing to do this otherwise pointless step results in a very-likely desynch any time a player builds a building.
         launchPath = newFilePath;
       }
       

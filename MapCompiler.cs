@@ -27,49 +27,6 @@ namespace AzerothWarsMapCompiler
       File.Copy(mapCompilationPackage.SourceMapPath, _sourceMapBackups + newFileName, false);
     }
 
-    public void ImportObjects(MapCompilationPackage mapCompilationPackage)
-    {
-      if (mapCompilationPackage.ObjectDirectoryPaths == null)
-      {
-        throw new Exception("MapCompilationPackage provided has no object directories to source from");
-      }
-
-      var templni = W3x2lni.ConvertToLni(mapCompilationPackage.SourceMapPath, _tempDirectoryPath + "tempini.w3x");
-      var objectTypes = new string[] { "ability", "buff", "destructable", "doodad", "item", "unit", "upgrade" };
-      foreach (var objectType in objectTypes)
-      {
-        string[] directories = (string[])mapCompilationPackage.ObjectDirectoryPaths.Clone();
-        for (int i = 0; i < directories.Length; i++)
-        {
-          directories[i] = directories[i] + objectType + @"\";
-        }
-        var objects = W3x2LniObject.CreateObjectsFromDirectories(directories);
-        W3x2LniObject.SaveObjectsToFile(objects, templni + "/" + "table/" + objectType + ".ini");
-      }
-      BackupSource(mapCompilationPackage);
-      W3x2lni.ConvertToObj(templni, mapCompilationPackage.SourceMapPath);
-    }
-
-    public void ExportObjects(MapCompilationPackage mapCompilationPackage)
-    {
-      var templni = W3x2lni.ConvertToLni(mapCompilationPackage.SourceMapPath, _tempDirectoryPath + "tempini.w3x");
-      var objectTypes = new string[] { "ability", "buff", "destructable", "doodad", "item", "unit", "upgrade" };
-
-      foreach (var objectType in objectTypes)
-      {
-        string[] directories = (string[])mapCompilationPackage.ObjectDirectoryPaths.Clone();
-        for (int i = 0; i < directories.Length; i++)
-        {
-          directories[i] = directories[i] + objectType + @"\";
-        }
-        if (File.Exists(templni + @"\table\" + objectType + ".ini"))
-        {
-          var objects = W3x2LniObject.CreateObjectsFromFile(templni + @"\table\" + objectType + ".ini");
-          W3x2LniObject.SaveObjectsToDirectories(objects, directories);
-        }
-      }
-    }
-
     public void CompileMap(MapCompilationPackage mapCompilationPackage, bool launch = false, bool publish = false)
     {
       var tempMapPath = _tempDirectoryPath + "tempMap.w3x";

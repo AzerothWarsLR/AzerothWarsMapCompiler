@@ -21,9 +21,7 @@ namespace AzerothWarsMapCompiler
 
     private bool ButtonsEnabled {
       set {
-        ExportObjectsButton.Enabled = value;
         TestMapButton.Enabled = value;
-        PublishMapButton.Enabled = value;
         PublishTestButton.Enabled = value;
       } 
     }
@@ -42,27 +40,6 @@ namespace AzerothWarsMapCompiler
     {
       ButtonsEnabled = false;
       _mapCompiler.CompileMap(SelectedPackage, true, false);
-      ButtonsEnabled = true;
-    }
-
-    private void PublishMapButton_Click(object sender, EventArgs e)
-    {
-      ButtonsEnabled = false;
-      _mapCompiler.CompileMap(SelectedPackage, false, true);
-      ButtonsEnabled = true;
-    }
-
-    private void ExportObjectsButton_Click(object sender, EventArgs e)
-    {
-      ButtonsEnabled = false;
-      _mapCompiler.ExportObjects(SelectedPackage);
-      ButtonsEnabled = true;
-    }
-
-    private void ImportObjectsButton_Click(object sender, EventArgs e)
-    {
-      ButtonsEnabled = false;
-      _mapCompiler.ImportObjects(SelectedPackage);
       ButtonsEnabled = true;
     }
 

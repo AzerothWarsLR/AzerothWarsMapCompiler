@@ -30,17 +30,12 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.TestMapButton = new System.Windows.Forms.Button();
-      this.PublishMapButton = new System.Windows.Forms.Button();
-      this.ExportObjectsButton = new System.Windows.Forms.Button();
       this.ChooseCompilationPackagePanel = new System.Windows.Forms.Panel();
       this.ChooseCompilationComboBox = new System.Windows.Forms.ComboBox();
       this.label1 = new System.Windows.Forms.Label();
       this.menuStrip2 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.FindWarcraftDirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.PublishTestButton = new System.Windows.Forms.Button();
       this.ChooseCompilationPackagePanel.SuspendLayout();
       this.menuStrip2.SuspendLayout();
@@ -56,28 +51,6 @@
       this.TestMapButton.Text = "Test map";
       this.TestMapButton.UseVisualStyleBackColor = true;
       this.TestMapButton.Click += new System.EventHandler(this.TestMapButton_Click);
-      // 
-      // PublishMapButton
-      // 
-      this.PublishMapButton.Enabled = false;
-      this.PublishMapButton.Location = new System.Drawing.Point(12, 128);
-      this.PublishMapButton.Name = "PublishMapButton";
-      this.PublishMapButton.Size = new System.Drawing.Size(110, 34);
-      this.PublishMapButton.TabIndex = 10;
-      this.PublishMapButton.Text = "Publish map";
-      this.PublishMapButton.UseVisualStyleBackColor = true;
-      this.PublishMapButton.Click += new System.EventHandler(this.PublishMapButton_Click);
-      // 
-      // ExportObjectsButton
-      // 
-      this.ExportObjectsButton.Enabled = false;
-      this.ExportObjectsButton.Location = new System.Drawing.Point(128, 128);
-      this.ExportObjectsButton.Name = "ExportObjectsButton";
-      this.ExportObjectsButton.Size = new System.Drawing.Size(110, 34);
-      this.ExportObjectsButton.TabIndex = 11;
-      this.ExportObjectsButton.Text = "Export objects";
-      this.ExportObjectsButton.UseVisualStyleBackColor = true;
-      this.ExportObjectsButton.Click += new System.EventHandler(this.ExportObjectsButton_Click);
       // 
       // ChooseCompilationPackagePanel
       // 
@@ -111,8 +84,7 @@
       // menuStrip2
       // 
       this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem});
       this.menuStrip2.Location = new System.Drawing.Point(0, 0);
       this.menuStrip2.Name = "menuStrip2";
       this.menuStrip2.Size = new System.Drawing.Size(251, 24);
@@ -122,8 +94,7 @@
       // fileToolStripMenuItem
       // 
       this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FindWarcraftDirectoryMenuItem,
-            this.exitToolStripMenuItem});
+            this.FindWarcraftDirectoryMenuItem});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
       this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
       this.fileToolStripMenuItem.Text = "&File";
@@ -134,27 +105,6 @@
       this.FindWarcraftDirectoryMenuItem.Size = new System.Drawing.Size(177, 22);
       this.FindWarcraftDirectoryMenuItem.Text = "Set Warcraft III path";
       this.FindWarcraftDirectoryMenuItem.Click += new System.EventHandler(this.FindWarcraftDirectoryMenuItem_Click);
-      // 
-      // exitToolStripMenuItem
-      // 
-      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-      this.exitToolStripMenuItem.Text = "E&xit";
-      this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-      // 
-      // helpToolStripMenuItem
-      // 
-      this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-      this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-      this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-      this.helpToolStripMenuItem.Text = "&Help";
-      // 
-      // aboutToolStripMenuItem
-      // 
-      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-      this.aboutToolStripMenuItem.Text = "&About...";
       // 
       // PublishTestButton
       // 
@@ -172,11 +122,9 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(251, 172);
+      this.ClientSize = new System.Drawing.Size(251, 139);
       this.Controls.Add(this.PublishTestButton);
       this.Controls.Add(this.ChooseCompilationPackagePanel);
-      this.Controls.Add(this.ExportObjectsButton);
-      this.Controls.Add(this.PublishMapButton);
       this.Controls.Add(this.TestMapButton);
       this.Controls.Add(this.menuStrip2);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -196,17 +144,11 @@
 
     #endregion
     private System.Windows.Forms.Button TestMapButton;
-    private System.Windows.Forms.Button PublishMapButton;
-    private System.Windows.Forms.Button ExportObjectsButtons;
     private System.Windows.Forms.Panel ChooseCompilationPackagePanel;
     private System.Windows.Forms.ComboBox ChooseCompilationComboBox;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Button ExportObjectsButton;
     private System.Windows.Forms.MenuStrip menuStrip2;
     private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem FindWarcraftDirectoryMenuItem;
     private System.Windows.Forms.Button PublishTestButton;
   }

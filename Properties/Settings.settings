@@ -1,39 +1,40 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AzerothWarsMapCompiler.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="Warcraft3OptimizerPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">WC3Optimizer\VXJWTSOPT.exe</Value>
-    </Setting>
-    <Setting Name="JASSHelperPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">JassHelper\jasshelper.exe</Value>
-    </Setting>
-    <Setting Name="MPQMasterPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">MpqEditor\MpqEditor.exe</Value>
-    </Setting>
-    <Setting Name="commonjPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">common.j</Value>
-    </Setting>
-    <Setting Name="blizzardjPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">blizzard.j</Value>
-    </Setting>
-    <Setting Name="CompiledMapsPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\compiledMaps\</Value>
-    </Setting>
-    <Setting Name="TemporaryFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">temp\</Value>
-    </Setting>
-    <Setting Name="Warcraft3FilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files (x86)\Warcraft III\_retail_\x86_64\Warcraft III.exe</Value>
-    </Setting>
-    <Setting Name="w3x2IniFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">w3x2lni_enUS_v2.7.2\w2l.exe</Value>
-    </Setting>
-    <Setting Name="MapCompilationPackagesPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">mapCompilationPackages.json</Value>
-    </Setting>
-    <Setting Name="SourceMapBackupDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\backups\sourceMaps\</Value>
-    </Setting>
-  </Settings>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="AzerothWarsMapCompiler.Properties" GeneratedClassName="Settings">
+    <Profiles/>
+    <Settings>
+        <Setting Name="Warcraft3OptimizerPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">WC3Optimizer\VXJWTSOPT.exe</Value>
+        </Setting>
+        <Setting Name="JASSHelperPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">JassHelper\jasshelper.exe</Value>
+        </Setting>
+        <Setting Name="MPQMasterPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">MpqEditor\MpqEditor.exe</Value>
+        </Setting>
+        <Setting Name="commonjPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">common.j</Value>
+        </Setting>
+        <Setting Name="blizzardjPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">blizzard.j</Value>
+        </Setting>
+        <Setting Name="CompiledMapsPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">..\compiledMaps\</Value>
+        </Setting>
+        <Setting Name="TemporaryFilePath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">temp\</Value>
+        </Setting>
+        <Setting Name="Warcraft3FilePath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">C:\Program Files (x86)\Warcraft III\_retail_\x86_64\Warcraft III.exe</Value>
+        </Setting>
+        <Setting Name="w3x2IniFilePath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">w3x2lni_enUS_v2.7.2\w2l.exe</Value>
+        </Setting>
+        <Setting Name="MapCompilationPackagesPath" Type="System.String" Scope="User">
+            <Value Profile="(Default)">mapCompilationPackages.json</Value>
+        </Setting>
+        <Setting Name="SourceMapBackupDirectory" Type="System.String" Scope="User">
+            <Value Profile="(Default)">..\backups\sourceMaps\</Value>
+        </Setting>
+    </Settings>
 </SettingsFile>

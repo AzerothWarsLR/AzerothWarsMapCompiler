@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Text;
+﻿using System.IO;
+using AzerothWarsMapCompiler.Properties;
 
-namespace AzerothWarsMapCompiler
+namespace AzerothWarsMapCompiler;
+
+internal static class Wc3OptimizerWrapper
 {
-  static class WC3OptimizerWrapper
+  public static string OptimizeMap(string mapFile, string outputPath)
   {
-    public static string OptimizeMap(string mapFile, string outputPath)
+    File.Delete(outputPath);
+    CommandLineUtils.RunCommand(Settings.Default.Warcraft3OptimizerPath, new string[]
     {
-      File.Delete(outputPath);
-      CommandLineUtils.RunCommand(Properties.Settings.Default.Warcraft3OptimizerPath, new string[]{
-        mapFile,
-        "--do",
-        outputPath,
-        "--checkall",
-        "--exit"
-      });
-      return outputPath;
-    }
+      mapFile,
+      "--do",
+      outputPath,
+      "--checkall",
+      "--exit"
+    });
+    return outputPath;
   }
 }

@@ -1,16 +1,16 @@
-﻿using System.Text.RegularExpressions;
+﻿using AzerothWarsMapCompiler.Properties;
 
-namespace AzerothWarsMapCompiler
+namespace AzerothWarsMapCompiler;
+
+public static class Wc3Wrapper
 {
- public static class WC3Wrapper
+  public static void Run(string mapFilePath)
   {
-    public static void Run(string mapFilePath)
+    CommandLineUtils.RunCommand(Settings.Default.Warcraft3FilePath, new string[]
     {
-      CommandLineUtils.RunCommand(Properties.Settings.Default.Warcraft3FilePath, new string[]{
-        "-launch",
-        "-loadfile",
-        mapFilePath
-      });
-    }
+      "-launch",
+      "-loadfile",
+      mapFilePath
+    });
   }
 }

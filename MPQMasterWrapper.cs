@@ -1,41 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Text;
+﻿using System.IO;
+using AzerothWarsMapCompiler.Properties;
 
-namespace AzerothWarsMapCompiler
+namespace AzerothWarsMapCompiler;
+
+internal static class MpqMasterWrapper
 {
-  static class MPQMasterWrapper
+  public static void Add(string mapFile, string file, string targetName)
   {
-    public static void Add(string mapFile, string file, string targetName)
+    CommandLineUtils.RunCommand(Path.GetFullPath(Settings.Default.MPQMasterPath), new string[]
     {
-      CommandLineUtils.RunCommand(Path.GetFullPath(Properties.Settings.Default.MPQMasterPath), new string[] {
-        "/add",
-        mapFile,
-        file,
-        targetName,
-      });
-    }
+      "/add",
+      mapFile,
+      file,
+      targetName
+    });
+  }
 
-    public static void Delete(string mapFile, string file)
+  public static void Delete(string mapFile, string file)
+  {
+    CommandLineUtils.RunCommand(Path.GetFullPath(Settings.Default.MPQMasterPath), new string[]
     {
-      CommandLineUtils.RunCommand(Path.GetFullPath(Properties.Settings.Default.MPQMasterPath), new string[] {
-        "/delete",
-        mapFile,
-        file,
-      });
-    }
+      "/delete",
+      mapFile,
+      file
+    });
+  }
 
-    public static string Extract(string mapFile, string file, string destinationFolder)
+  public static string Extract(string mapFile, string file, string destinationFolder)
+  {
+    CommandLineUtils.RunCommand(Path.GetFullPath(Settings.Default.MPQMasterPath), new string[]
     {
-      CommandLineUtils.RunCommand(Path.GetFullPath(Properties.Settings.Default.MPQMasterPath), new string[] {
-        "/extract",
-        mapFile,
-        file,
-        destinationFolder
-      });
-      return destinationFolder + file;
-    }
+      "/extract",
+      mapFile,
+      file,
+      destinationFolder
+    });
+    return destinationFolder + file;
   }
 }

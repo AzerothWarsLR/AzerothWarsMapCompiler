@@ -20,7 +20,7 @@ public class MapCompiler
   {
     var tempMapPath = $"{_tempDirectoryPath}tempMap.w3x";
 
-    if (!Directory.Exists(tempMapPath)) Directory.CreateDirectory(tempMapPath);
+    if (!Directory.Exists(_tempDirectoryPath)) Directory.CreateDirectory(_tempDirectoryPath);
     
     File.Copy(publishSettings.SourceMapPath, tempMapPath, true);
     var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, publishSettings.SourceCodePath);

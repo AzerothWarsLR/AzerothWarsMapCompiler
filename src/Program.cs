@@ -21,7 +21,6 @@ internal static class Program
 
     var tempDirectoryPath = Path.GetFullPath(Settings.Default.TemporaryFilePath);
     var compiledMapsDirectoryPath = Path.GetFullPath(Settings.Default.CompiledMapsPath);
-    var sourceMapBackupsPath = Path.GetFullPath(Settings.Default.SourceMapBackupDirectory);
 
     var newJassHelper = new JassHelper(
       Path.GetFullPath(Settings.Default.JASSHelperPath),

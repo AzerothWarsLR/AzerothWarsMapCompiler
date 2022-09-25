@@ -6,21 +6,21 @@ public class MapCompiler
 {
   private readonly string _compiledMapsDirectoryPath;
   private readonly JassHelper _jassHelper;
-  private readonly string _sourceMapBackups;
   private readonly string _tempDirectoryPath;
 
-  public MapCompiler(string tempDirectoryPath, string compiledMapsDirectoryPath, string sourceMapBackups,
-    JassHelper jassHelper)
+  public MapCompiler(string tempDirectoryPath, string compiledMapsDirectoryPath, JassHelper jassHelper)
   {
     _tempDirectoryPath = tempDirectoryPath;
     _compiledMapsDirectoryPath = compiledMapsDirectoryPath;
-    _sourceMapBackups = sourceMapBackups;
     _jassHelper = jassHelper;
   }
 
   public void CompileMap(MapCompilationPackage mapCompilationPackage, bool launch = false, bool publish = false)
   {
     var tempMapPath = $"{_tempDirectoryPath}tempMap.w3x";
+
+    if (!Directory.Exists(tempMapPath)) Directory.CreateDirectory(tempMapPath);
+    
     File.Copy(mapCompilationPackage.SourceMapPath, tempMapPath, true);
     var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, mapCompilationPackage.SourceCodeDirectoryPaths);
     var compiledJass = _jassHelper.CompileToJass(joinedJass, $"{_tempDirectoryPath}compiled.j");

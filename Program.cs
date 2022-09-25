@@ -30,7 +30,7 @@ internal static class Program
       Path.GetFullPath(Settings.Default.TemporaryFilePath));
 
     var newMapCompiler =
-      new MapCompiler(tempDirectoryPath, compiledMapsDirectoryPath, sourceMapBackupsPath, newJassHelper);
+      new MapCompiler(tempDirectoryPath, compiledMapsDirectoryPath, newJassHelper);
     var mapCompilationPackages = JsonConvert.DeserializeObject<List<MapCompilationPackage>>(
       File.ReadAllText(Settings.Default.MapCompilationPackagesPath)).ToArray();
 

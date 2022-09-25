@@ -1,13 +1,26 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 
 namespace AzerothWarsMapCompiler;
+
+public readonly struct ParsedCommand
+{
+  public readonly string Cmd;
+  public readonly string[] ArgumentArray;
+
+  public ParsedCommand(string cmd, string[] argumentArray)
+  {
+    Cmd = cmd;
+    ArgumentArray = argumentArray;
+  }
+}
 
 public static class CommandLineUtils
 {
   private const string Quote = "\"";
 
-  public static void RunCommand(string cmd, string[] argumentArray)
+  internal static ParsedCommand ParseCommand(string cmd, string[] argumentArray)
   {
     //Add quotes around the command if necessary
     if (cmd.Contains(' ')) cmd = Quote + cmd + Quote;
@@ -24,7 +37,14 @@ public static class CommandLineUtils
       if (i < argumentArray.Length) arguments += " ";
     }
 
-    var procStartInfo = new ProcessStartInfo("cmd", $"/c {cmd} {arguments}")
+    return new ParsedCommand(cmd, argumentArray);
+  }
+  
+  public static void RunCommand(string cmd, string[] argumentArray)
+  {
+    var command = ParseCommand(cmd, argumentArray);
+    
+    var procStartInfo = new ProcessStartInfo("cmd", $"/c {command.Cmd} {command.ArgumentArray}")
     {
       RedirectStandardError = true,
       RedirectStandardOutput = true,

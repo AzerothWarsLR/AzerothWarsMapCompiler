@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace AzerothWarsMapCompiler;
 
@@ -17,14 +16,6 @@ public class MapCompiler
     _compiledMapsDirectoryPath = compiledMapsDirectoryPath;
     _sourceMapBackups = sourceMapBackups;
     _jassHelper = jassHelper;
-  }
-
-  public void BackupSource(MapCompilationPackage mapCompilationPackage)
-  {
-    var newFileName =
-      $"{Path.GetFileNameWithoutExtension(mapCompilationPackage.SourceMapPath)}{DateTime.Now:yyyyMMddHHmmssfff}.w3x";
-    Directory.CreateDirectory(_sourceMapBackups);
-    File.Copy(mapCompilationPackage.SourceMapPath, _sourceMapBackups + newFileName, false);
   }
 
   public void CompileMap(MapCompilationPackage mapCompilationPackage, bool launch = false, bool publish = false)

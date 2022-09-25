@@ -4,27 +4,24 @@ using System.Diagnostics;
 
 namespace AzerothWarsMapCompiler;
 
-public readonly struct ParsedCommand
-{
-  public readonly string Cmd;
-  public readonly string[] ArgumentArray;
-
-  public ParsedCommand(string cmd, string[] argumentArray)
-  {
-    Cmd = cmd;
-    ArgumentArray = argumentArray;
-  }
-}
-
 public static class CommandLineUtils
 {
   private const string Quote = "\"";
 
-  internal static ParsedCommand ParseCommand(string cmd, string[] argumentArray)
+  /// <summary>
+  /// Adds quotes around the command if it has spaces in it.
+  /// </summary>
+  internal static string ParseCommand(string cmd)
   {
-    //Add quotes around the command if necessary
     if (cmd.Contains(' ')) cmd = Quote + cmd + Quote;
-    //Add quotes around the arguments if they have spaces in them
+    return cmd;
+  }
+
+  /// <summary>
+  /// Adds quotes around the arguments that have spaces in them.
+  /// </summary>
+  internal static string ParseArguments(string[] argumentArray)
+  {
     var arguments = "";
     var i = 0;
     foreach (var argument in argumentArray)
@@ -37,14 +34,12 @@ public static class CommandLineUtils
       if (i < argumentArray.Length) arguments += " ";
     }
 
-    return new ParsedCommand(cmd, argumentArray);
+    return arguments;
   }
-  
+
   public static void RunCommand(string cmd, string[] argumentArray)
   {
-    var command = ParseCommand(cmd, argumentArray);
-    
-    var procStartInfo = new ProcessStartInfo("cmd", $"/c {command.Cmd} {command.ArgumentArray}")
+    var procStartInfo = new ProcessStartInfo("cmd", $"/c {ParseCommand(cmd)} {ParseArguments(argumentArray)}")
     {
       RedirectStandardError = true,
       RedirectStandardOutput = true,

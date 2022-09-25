@@ -1,12 +1,10 @@
-﻿using AzerothWarsMapCompiler.Properties;
-
-namespace AzerothWarsMapCompiler;
+﻿namespace AzerothWarsMapCompiler;
 
 public static class Wc3Wrapper
 {
-  public static void Run(string mapFilePath)
+  public static void Run(string wc3Path, string mapFilePath)
   {
-    CommandLineUtils.RunCommand(Settings.Default.Warcraft3FilePath, new string[]
+    CommandLineUtils.RunCommand(wc3Path, new string[]
     {
       "-launch",
       "-loadfile",

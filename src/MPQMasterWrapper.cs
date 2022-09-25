@@ -1,13 +1,10 @@
-﻿using System.IO;
-using AzerothWarsMapCompiler.Properties;
-
-namespace AzerothWarsMapCompiler;
+﻿namespace AzerothWarsMapCompiler;
 
 internal static class MpqMasterWrapper
 {
-  public static void Add(string mapFile, string file, string targetName)
+  public static void Add(string mpqMasterPath, string mapFile, string file, string targetName)
   {
-    CommandLineUtils.RunCommand(Path.GetFullPath(Settings.Default.MPQMasterPath), new string[]
+    CommandLineUtils.RunCommand(mpqMasterPath, new string[]
     {
       "/add",
       mapFile,
@@ -16,9 +13,9 @@ internal static class MpqMasterWrapper
     });
   }
 
-  public static void Delete(string mapFile, string file)
+  public static void Delete(string mpqMasterPath, string mapFile, string file)
   {
-    CommandLineUtils.RunCommand(Path.GetFullPath(Settings.Default.MPQMasterPath), new string[]
+    CommandLineUtils.RunCommand(mpqMasterPath, new string[]
     {
       "/delete",
       mapFile,
@@ -26,9 +23,9 @@ internal static class MpqMasterWrapper
     });
   }
 
-  public static string Extract(string mapFile, string file, string destinationFolder)
+  public static string Extract(string mpqMasterPath, string mapFile, string file, string destinationFolder)
   {
-    CommandLineUtils.RunCommand(Path.GetFullPath(Settings.Default.MPQMasterPath), new string[]
+    CommandLineUtils.RunCommand(mpqMasterPath, new string[]
     {
       "/extract",
       mapFile,

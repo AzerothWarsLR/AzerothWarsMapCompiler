@@ -8,11 +8,13 @@ public class JassHelper
   private readonly string _blizzardjPath;
   private readonly string _commonjPath;
   private readonly string _executablePath;
+  private readonly string _mpqMasterPath;
   private readonly string _tempFileDirectoryPath;
 
-  public JassHelper(string executablePath, string commonjPath, string blizzardjPath, string tempFileDirectoryPath)
+  public JassHelper(string executablePath, string mpqMasterPath, string commonjPath, string blizzardjPath, string tempFileDirectoryPath)
   {
     _executablePath = executablePath;
+    _mpqMasterPath = mpqMasterPath;
     _commonjPath = commonjPath;
     _blizzardjPath = blizzardjPath;
     _tempFileDirectoryPath = tempFileDirectoryPath;
@@ -27,7 +29,7 @@ public class JassHelper
     Directory.CreateDirectory(_tempFileDirectoryPath);
     using (var writer = new StreamWriter($"{_tempFileDirectoryPath}merged.j"))
     {
-      using (var reader = File.OpenText(MpqMasterWrapper.Extract(map, "war3map.j", _tempFileDirectoryPath)))
+      using (var reader = File.OpenText(MpqMasterWrapper.Extract(map, _mpqMasterPath, "war3map.j", _tempFileDirectoryPath)))
       {
         writer.Write(reader.ReadToEnd());
       }

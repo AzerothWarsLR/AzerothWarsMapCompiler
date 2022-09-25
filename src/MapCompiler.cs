@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using AzerothWarsMapCompiler.Settings;
 
 namespace AzerothWarsMapCompiler;
 
@@ -15,7 +16,7 @@ public class MapCompiler
     _jassHelper = jassHelper;
   }
 
-  public void CompileMap(PublishSettings publishSettings, bool launch = false, bool publish = false)
+  public void CompileMap(PathSettings pathSettings, PublishSettings publishSettings, bool launch = false, bool publish = false)
   {
     var tempMapPath = $"{_tempDirectoryPath}tempMap.w3x";
 
@@ -24,7 +25,7 @@ public class MapCompiler
     File.Copy(publishSettings.SourceMapPath, tempMapPath, true);
     var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, publishSettings.SourceCodePath);
     var compiledJass = _jassHelper.CompileToJass(joinedJass, $"{_tempDirectoryPath}compiled.j");
-    MpqMasterWrapper.Add(tempMapPath, compiledJass, "war3map.j");
+    MpqMasterWrapper.Add(pathSettings.MPQMasterPath, tempMapPath, compiledJass, "war3map.j");
 
     var launchPath = tempMapPath;
 
@@ -37,6 +38,6 @@ public class MapCompiler
       launchPath = newFilePath;
     }
 
-    if (launch) Wc3Wrapper.Run(launchPath);
+    if (launch) Wc3Wrapper.Run(pathSettings.Warcraft3FilePath, launchPath);
   }
 }

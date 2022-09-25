@@ -12,7 +12,7 @@ namespace AzerothWarsMapCompiler.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -121,37 +121,37 @@ namespace AzerothWarsMapCompiler.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("w3x2lni_enUS_v2.7.2\\w2l.exe")]
-        public string w3x2IniFilePath {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SourceMapPath {
             get {
-                return ((string)(this["w3x2IniFilePath"]));
+                return ((string)(this["SourceMapPath"]));
             }
             set {
-                this["w3x2IniFilePath"] = value;
+                this["SourceMapPath"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mapCompilationPackages.json")]
-        public string MapCompilationPackagesPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SourceCodePath {
             get {
-                return ((string)(this["MapCompilationPackagesPath"]));
+                return ((string)(this["SourceCodePath"]));
             }
             set {
-                this["MapCompilationPackagesPath"] = value;
+                this["SourceCodePath"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\backups\\sourceMaps\\")]
-        public string SourceMapBackupDirectory {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PublishedMapName {
             get {
-                return ((string)(this["SourceMapBackupDirectory"]));
+                return ((string)(this["PublishedMapName"]));
             }
             set {
-                this["SourceMapBackupDirectory"] = value;
+                this["PublishedMapName"] = value;
             }
         }
     }

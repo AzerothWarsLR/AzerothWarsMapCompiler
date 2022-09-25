@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace AzerothWarsMapCompiler;
@@ -23,7 +22,7 @@ public class JassHelper
   ///   Merges all vJASS .j files in a number of directories and their subdirectories into a single .j file,
   ///   merges that with the pure JASS war3map.j file in a single map, and outputs a compiled JASS .j file.
   /// </summary>
-  public string AddJassDirectoriesToMap(string map, IEnumerable<string> directories)
+  public string AddJassDirectoriesToMap(string map, params string[] directories)
   {
     Directory.CreateDirectory(_tempFileDirectoryPath);
     using (var writer = new StreamWriter($"{_tempFileDirectoryPath}merged.j"))

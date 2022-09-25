@@ -1,22 +1,15 @@
 ﻿namespace AzerothWarsMapCompiler;
 
-public class MapCompilationPackage
+public class PublishSettings
 {
-  public MapCompilationPackage(string packageName, string sourceMapPath, string[] sourceCodeDirectoryPaths,
-    string[] objectDirectoryPaths, string fileName, string versionNumber)
+  public PublishSettings(string sourceMapPath, string sourceCodePath, string publishedMapName)
   {
-    PackageName = packageName;
     SourceMapPath = sourceMapPath;
-    SourceCodeDirectoryPaths = sourceCodeDirectoryPaths;
-    ObjectDirectoryPaths = objectDirectoryPaths;
-    FileName = fileName;
-    VersionNumber = versionNumber;
+    SourceCodePath = sourceCodePath;
+    PublishedMapName = publishedMapName;
   }
-
-  public string PackageName { get; }
+  
   public string SourceMapPath { get; }
-  public string[] SourceCodeDirectoryPaths { get; }
-  public string[] ObjectDirectoryPaths { get; }
-  public string FileName { get; }
-  public string VersionNumber { get; }
+  public string SourceCodePath { get; }
+  public string PublishedMapName { get; }
 }

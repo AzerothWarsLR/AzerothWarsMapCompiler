@@ -7,69 +7,50 @@ namespace AzerothWarsMapCompiler;
 
 public partial class MainForm : Form
 {
+  private readonly PublishSettings _publishSettings;
   private readonly MapCompiler _mapCompiler;
 
-  public MainForm(MapCompilationPackage[] mapCompilationPackages, MapCompiler mapCompiler)
+  public MainForm(PublishSettings publishSettings, MapCompiler mapCompiler)
   {
+    _publishSettings = publishSettings;
     _mapCompiler = mapCompiler;
     InitializeComponent();
-    ChooseCompilationComboBox.DisplayMember = "PackageName";
-    ChooseCompilationComboBox.Items.AddRange(mapCompilationPackages);
-  }
-
-  private MapCompilationPackage SelectedPackage => ChooseCompilationComboBox.SelectedItem as MapCompilationPackage;
-
-  private bool ButtonsEnabled
-  {
-    set
-    {
-      TestMapButton.Enabled = value;
-      PublishTestButton.Enabled = value;
-    }
   }
 
   private void TestMapButton_Click(object sender, EventArgs e)
   {
-    ButtonsEnabled = false;
-    _mapCompiler.CompileMap(SelectedPackage, true);
-    ButtonsEnabled = true;
+    _mapCompiler.CompileMap(_publishSettings, true);
   }
 
   private void PublishTestMapButton_Click(object sender, EventArgs e)
   {
-    ButtonsEnabled = false;
-    _mapCompiler.CompileMap(SelectedPackage, true, true);
-    ButtonsEnabled = true;
+    _mapCompiler.CompileMap(_publishSettings, true, true);
   }
 
   private void MainForm_Load(object sender, EventArgs e)
   {
   }
 
-  private void ChooseCompilationComboBox_SelectedIndexChanged(object sender, EventArgs e)
-  {
-    ButtonsEnabled = ChooseCompilationComboBox.SelectedItem != null;
-  }
-
-  private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-  {
-    Close();
-  }
-
   private void FindWarcraftDirectoryMenuItem_Click(object sender, EventArgs e)
   {
     var openFileDialog = new OpenFileDialog
     {
-      Filter = "executables (*.exe)|*.exe"
+      Filter = @"executables (*.exe)|*.exe"
     };
-    if (openFileDialog.ShowDialog() == DialogResult.OK)
-      try
-      {
-        Settings.Default.Warcraft3FilePath = openFileDialog.FileName;
-      }
-      catch (SecurityException ex)
-      {
-        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\nDetails:\n\n{ex.StackTrace}");
-      }
+    if (openFileDialog.ShowDialog() != DialogResult.OK) return;
+    try
+    {
+      Settings.Default.Warcraft3FilePath = openFileDialog.FileName;
+    }
+    catch (SecurityException ex)
+    {
+      MessageBox.Show($@"Security error.
+
+Error message: {ex.Message}
+
+Details:
+
+{ex.StackTrace}");
+    }
   }
 }

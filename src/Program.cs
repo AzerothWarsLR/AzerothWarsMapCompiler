@@ -30,12 +30,9 @@ internal static class Program
 
     var newMapCompiler =
       new MapCompiler(tempDirectoryPath, compiledMapsDirectoryPath, newJassHelper);
-    var mapCompilationPackages = JsonConvert.DeserializeObject<List<MapCompilationPackage>>(
-      File.ReadAllText(Settings.Default.MapCompilationPackagesPath)).ToArray();
 
-    if (!File.Exists(Settings.Default.MapCompilationPackagesPath))
-      File.Create(Settings.Default.MapCompilationPackagesPath).Close();
-
-    Application.Run(new MainForm(mapCompilationPackages, newMapCompiler));
+    var publishSettings = new PublishSettings(Settings.Default.SourceMapPath, Settings.Default.SourceCodePath, Settings.Default.PublishedMapName);
+    
+    Application.Run(new MainForm(publishSettings, newMapCompiler));
   }
 }

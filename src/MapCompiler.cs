@@ -15,14 +15,14 @@ public class MapCompiler
     _jassHelper = jassHelper;
   }
 
-  public void CompileMap(MapCompilationPackage mapCompilationPackage, bool launch = false, bool publish = false)
+  public void CompileMap(PublishSettings publishSettings, bool launch = false, bool publish = false)
   {
     var tempMapPath = $"{_tempDirectoryPath}tempMap.w3x";
 
     if (!Directory.Exists(tempMapPath)) Directory.CreateDirectory(tempMapPath);
     
-    File.Copy(mapCompilationPackage.SourceMapPath, tempMapPath, true);
-    var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, mapCompilationPackage.SourceCodeDirectoryPaths);
+    File.Copy(publishSettings.SourceMapPath, tempMapPath, true);
+    var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, publishSettings.SourceCodePath);
     var compiledJass = _jassHelper.CompileToJass(joinedJass, $"{_tempDirectoryPath}compiled.j");
     MpqMasterWrapper.Add(tempMapPath, compiledJass, "war3map.j");
 
@@ -32,7 +32,7 @@ public class MapCompiler
     {
       Directory.CreateDirectory(_compiledMapsDirectoryPath);
       var newFilePath =
-        $"{_compiledMapsDirectoryPath}{mapCompilationPackage.FileName}{mapCompilationPackage.VersionNumber}.w3x";
+        $"{_compiledMapsDirectoryPath}{publishSettings.PublishedMapName}.w3x";
       File.Copy(tempMapPath, newFilePath, true);
       launchPath = newFilePath;
     }

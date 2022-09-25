@@ -21,6 +21,7 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Settings.settings</DependentUpon>
         </Compile>
+        <Compile Remove="AzerothWarsMapCompiler.Test\UnitTest1.cs" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "AzerothWarsMapCompiler": {
-      "commandName": "Project",
-      "workingDirectory": "E:\\Users\\Zak\\Documents\\YakaryBovineMaps\\AzerothWarsLR\\buildTools"
-    }
-  }
-}

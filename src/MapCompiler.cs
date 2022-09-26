@@ -23,7 +23,7 @@ public class MapCompiler
     if (!Directory.Exists(_tempDirectoryPath)) Directory.CreateDirectory(_tempDirectoryPath);
     
     File.Copy(publishSettings.SourceMapPath, tempMapPath, true);
-    var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, publishSettings.SourceCodePath);
+    var joinedJass = _jassHelper.AddJassDirectoriesToMap(tempMapPath, Path.GetFullPath(publishSettings.SourceCodePath));
     var compiledJass = _jassHelper.CompileToJass(joinedJass, $"{_tempDirectoryPath}compiled.j");
     MpqMasterWrapper.Add(pathSettings.MPQMasterPath, tempMapPath, compiledJass, "war3map.j");
 

@@ -29,7 +29,7 @@ public class JassHelper
     Directory.CreateDirectory(_tempFileDirectoryPath);
     using (var writer = new StreamWriter($"{_tempFileDirectoryPath}merged.j"))
     {
-      using (var reader = File.OpenText(MpqMasterWrapper.Extract(map, _mpqMasterPath, "war3map.j", _tempFileDirectoryPath)))
+      using (var reader = File.OpenText(MpqMasterWrapper.Extract(_mpqMasterPath, map, "war3map.j", _tempFileDirectoryPath)))
       {
         writer.Write(reader.ReadToEnd());
       }

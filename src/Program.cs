@@ -30,8 +30,8 @@ internal static class Program
     var compiledMapsDirectoryPath = Path.GetFullPath(pathSettings.CompiledMapsPath);
 
     var newJassHelper = new JassHelper(
-      Path.GetFullPath(pathSettings.MPQMasterPath),
       Path.GetFullPath(pathSettings.JASSHelperPath),
+      Path.GetFullPath(pathSettings.MPQMasterPath),
       Path.GetFullPath(pathSettings.commonjPath),
       Path.GetFullPath(pathSettings.blizzardjPath),
       Path.GetFullPath(pathSettings.TemporaryFilePath));

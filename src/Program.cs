@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Windows.Forms;
 using AzerothWarsMapCompiler.Settings;
 using Microsoft.Extensions.Configuration;
 
@@ -21,10 +20,6 @@ internal static class Program
     
     var publishSettings = config.GetRequiredSection("PublishSettings").Get<PublishSettings>();
     var pathSettings = config.GetRequiredSection("PathSettings").Get<PathSettings>();
-    
-    Application.SetHighDpiMode(HighDpiMode.SystemAware);
-    Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
 
     var tempDirectoryPath = Path.GetFullPath(pathSettings.TemporaryFilePath);
     var compiledMapsDirectoryPath = Path.GetFullPath(pathSettings.CompiledMapsPath);
@@ -39,6 +34,6 @@ internal static class Program
     var newMapCompiler =
       new MapCompiler(tempDirectoryPath, compiledMapsDirectoryPath, newJassHelper);
 
-    Application.Run(new MainForm(publishSettings, pathSettings, newMapCompiler));
+    newMapCompiler.CompileMap(pathSettings, publishSettings, true, true);
   }
 }

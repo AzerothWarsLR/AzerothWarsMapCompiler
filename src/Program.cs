@@ -13,8 +13,16 @@ internal static class Program
   [STAThread]
   private static void Main()
   {
+    var userSpecificAppSettings = $"appsettings.{Environment.UserName}.json";
+
+    if (!File.Exists(userSpecificAppSettings))
+    {
+      File.Copy("appsettings.json", userSpecificAppSettings);
+    }
+    
     IConfiguration config = new ConfigurationBuilder()
       .AddJsonFile("appsettings.json")
+      .AddJsonFile(userSpecificAppSettings)
       .AddEnvironmentVariables()
       .Build();
     
